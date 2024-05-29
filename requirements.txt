@@ -1,0 +1,5 @@
+django
+djangorestframework
+django-redis
+python-dotenv
+psycopg2
