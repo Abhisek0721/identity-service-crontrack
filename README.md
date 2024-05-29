@@ -2,7 +2,7 @@
 
 This is the backend microservice of Creato, a social media management software developed using Django (python framework).
 
-### Frontend Source Code: [Click Here](https://github.com/Abhisek0721/mentorsklub-frontend](https://github.com/Abhisek0721/creato-frontend)
+### Frontend Source Code: [Click Here](https://github.com/Abhisek0721/creato-frontend)
 
 ## Features
 
