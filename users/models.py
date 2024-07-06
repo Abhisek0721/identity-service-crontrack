@@ -22,8 +22,8 @@ class CustomUserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    full_name = models.CharField(max_length=255)
-    email = models.EmailField(unique=True)
+    full_name = models.CharField(max_length=255, null=False)
+    email = models.EmailField(unique=True, null=False)
     verified = models.BooleanField(default=False)
     google_id = models.CharField(max_length=255, blank=True, null=True)
     profile_picture = models.URLField(blank=True, null=True)
