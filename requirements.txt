@@ -3,3 +3,4 @@ djangorestframework
 django-redis
 python-dotenv
 psycopg2
+djangorestframework_simplejwt
