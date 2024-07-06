@@ -10,23 +10,26 @@ from identity_service_creato.utils.api_response import api_response
 User = get_user_model()
 
 class RegisterView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = RegisterSerializer
     permission_classes = (AllowAny,)
 
     def post(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.save()
-        user_serializer = UserSerializer(user)
-        return api_response(data=user_serializer.data, message="Successfully created an account", status=status.HTTP_201_CREATED)
+        serializer = RegisterSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            data = serializer.save()
+            return api_response(data=data, message="User registered successfully.", status=status.HTTP_201_CREATED)
+
 
 class LoginView(APIView):
     permission_classes = (AllowAny,)
 
     def post(self, request, *args, **kwargs):
         serializer = LoginSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data['user']
-        user_serializer = UserSerializer(user)
-        return api_response(data=user_serializer.data, message="Login successful.", status=status.HTTP_200_OK)
+        if serializer.is_valid(raise_exception=True):
+            validated_data = serializer.validated_data
+            user_data = UserSerializer(validated_data["user"]).data
+            response_data = {
+                "refresh_token": validated_data["refresh"],
+                "access_token": validated_data["access"],
+                "user": user_data
+            }
+            return api_response(data=response_data, message="Login successful.", status=status.HTTP_200_OK)

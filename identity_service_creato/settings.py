@@ -114,6 +114,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'identity_service_creato.utils.exception_filter.custom_exception_handler',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # other authentication classes if needed
+    ),
 }
 
 # Internationalization
