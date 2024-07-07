@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'drf_yasg',
     'users',
     'authentication',
-    'teams',
     'workspaces',
 ]
 
