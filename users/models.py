@@ -2,7 +2,6 @@
 import uuid
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
-from .constants import ROLE_CHOICES
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -28,8 +27,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     google_id = models.CharField(max_length=255, blank=True, null=True)
     profile_picture = models.URLField(blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
-    last_login_ip = models.GenericIPAddressField(blank=True, null=True)
-    role = models.CharField(max_length=50, choices=ROLE_CHOICES, default='admin')
     
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
@@ -42,5 +39,5 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['full_name', 'password']
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.email

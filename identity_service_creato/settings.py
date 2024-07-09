@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'drf_yasg',
     'users',
     'authentication',
-    'teams',
     'workspaces',
 ]
 
@@ -66,7 +65,7 @@ ROOT_URLCONF = 'identity_service_creato.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['*'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

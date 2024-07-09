@@ -1,6 +1,6 @@
 # users/utils.py
-from rest_framework.response import Response
 from rest_framework import status
+from django.http import JsonResponse
 
 def api_response(data=None, message="", error=None, status=status.HTTP_200_OK):
     if error is None:
@@ -10,4 +10,4 @@ def api_response(data=None, message="", error=None, status=status.HTTP_200_OK):
         "message": message,
         "error": error,
     }
-    return Response(response_data, status=status)
+    return JsonResponse(data=response_data, status=status)
