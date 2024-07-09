@@ -17,7 +17,7 @@ class CreateWorkspaceView(generics.CreateAPIView):
     )
     def post(self, request, *args, **kwargs):
         user_id = decode_jwt_token(request).get('user_id')
-        data = request.data.copy()
+        data = request.data
         data['created_by'] = user_id
         serializer = CreateWorkspaceSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
