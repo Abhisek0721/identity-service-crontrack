@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 from django.contrib.auth import get_user_model
 from authentication.serializers import RegisterSerializer, LoginSerializer
-from identity_service_creato.utils.api_response import api_response
+from core.utils.api_response import api_response
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from django.db.models.signals import post_save
