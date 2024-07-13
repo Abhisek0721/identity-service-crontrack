@@ -1,4 +1,3 @@
-from uuid import UUID
 from rest_framework import serializers
 from workspaces.models import Workspace, WorkspaceMember
 from users.models import User
