@@ -1,0 +1,2614 @@
+Watching for file changes with StatReloader
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000029B282764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1012, in get_code
+  File "<frozen importlib._bootstrap_external>", line 672, in _compile_bytecode
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001B06E6764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 84, in <module>
+    __import__('pkg_resources.extern.packaging.requirements')
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\requirements.py", line 10, in <module>
+    from pkg_resources.extern.pyparsing import (  # noqa
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 52, in create_module
+    return self.load_module(spec.name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 37, in load_module
+    __import__(extant)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\pyparsing\__init__.py", line 140, in <module>
+    from .core import __diag__, __compat__
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1012, in get_code
+  File "<frozen importlib._bootstrap_external>", line 672, in _compile_bytecode
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x00000230DFC764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\sessions\models.py", line 8, in <module>
+    class Session(AbstractBaseSession):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\sessions\models.py", line 34, in Session
+    class Meta(AbstractBaseSession.Meta):
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x00000222C0C764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\models.py", line 98, in <module>
+    class Group(models.Model):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 194, in __new__
+    new_class.add_to_class(obj_name, obj)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 371, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\fields\related.py", line 1933, in contribute_to_class
+    self.remote_field.through = create_many_to_many_intermediary_model(
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\fields\related.py", line 1292, in create_many_to_many_intermediary_model
+    "verbose_name": _("%(from)s-%(to)s relationship")
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\functional.py", line 167, in __mod__
+    return self.__cast() % other
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\functional.py", line 110, in __cast
+    return func(*self._args, **self._kw)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\translation\__init__.py", line 96, in gettext
+    return _trans.gettext(message)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\translation\trans_real.py", line 381, in gettext
+    _default = _default or translation(settings.LANGUAGE_CODE)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\translation\trans_real.py", line 294, in translation
+    _translations[language] = DjangoTranslation(language)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\translation\trans_real.py", line 164, in __init__
+    self._init_translation_catalog()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\translation\trans_real.py", line 211, in _init_translation_catalog
+    translation = self._new_gnu_trans(localedir)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\translation\trans_real.py", line 200, in _new_gnu_trans
+    return gettext_module.translation(
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001A15E1764D0>> raised: ImproperlyConfigured('Error loading psycopg2 or psycopg module')
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 25, in <module>
+    import psycopg as Database
+ModuleNotFoundError: No module named 'psycopg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 27, in <module>
+    import psycopg2 as Database
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\psycopg2\__init__.py", line 51, in <module>
+    from psycopg2._psycopg import (                     # noqa
+ImportError: DLL load failed while importing _psycopg: The paging file is too small for this operation to complete.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\models.py", line 3, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\base_user.py", line 59, in <module>
+    class AbstractBaseUser(models.Model):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 143, in __new__
+    new_class.add_to_class("_meta", Options(meta, app_label))
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 371, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\options.py", line 243, in contribute_to_class
+    self.db_table, connection.ops.max_name_length()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\connection.py", line 15, in __getattr__
+    return getattr(self._connections[self._alias], item)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\connection.py", line 62, in __getitem__
+    conn = self.create_connection(alias)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\utils.py", line 193, in create_connection
+    backend = load_backend(db["ENGINE"])
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\utils.py", line 113, in load_backend
+    return import_module("%s.base" % backend_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 29, in <module>
+    raise ImproperlyConfigured("Error loading psycopg2 or psycopg module")
+django.core.exceptions.ImproperlyConfigured: Error loading psycopg2 or psycopg module
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001B8CC5764D0>> raised: ImproperlyConfigured('Error loading psycopg2 or psycopg module')
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 25, in <module>
+    import psycopg as Database
+ModuleNotFoundError: No module named 'psycopg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 27, in <module>
+    import psycopg2 as Database
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\psycopg2\__init__.py", line 51, in <module>
+    from psycopg2._psycopg import (                     # noqa
+ImportError: DLL load failed while importing _psycopg: The paging file is too small for this operation to complete.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\models.py", line 3, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\base_user.py", line 59, in <module>
+    class AbstractBaseUser(models.Model):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 143, in __new__
+    new_class.add_to_class("_meta", Options(meta, app_label))
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 371, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\options.py", line 243, in contribute_to_class
+    self.db_table, connection.ops.max_name_length()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\connection.py", line 15, in __getattr__
+    return getattr(self._connections[self._alias], item)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\connection.py", line 62, in __getitem__
+    conn = self.create_connection(alias)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\utils.py", line 193, in create_connection
+    backend = load_backend(db["ENGINE"])
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\utils.py", line 113, in load_backend
+    return import_module("%s.base" % backend_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 29, in <module>
+    raise ImproperlyConfigured("Error loading psycopg2 or psycopg module")
+django.core.exceptions.ImproperlyConfigured: Error loading psycopg2 or psycopg module
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+Watching for file changes with StatReloader
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\__init__.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+Internal Server Error: /api/v1/auth/signup
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\core\__init__.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /api/v1/auth/signup
+Bad Request: /api/v1/auth/signup
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\__init__.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\settings.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001BE534764D0>> raised: TypeError('issubclass() arg 1 must be a class')
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 197, in create
+    if not issubclass(app_config_class, AppConfig):
+TypeError: issubclass() arg 1 must be a class
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000019503C764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 84, in <module>
+    __import__('pkg_resources.extern.packaging.requirements')
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\requirements.py", line 10, in <module>
+    from pkg_resources.extern.pyparsing import (  # noqa
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 52, in create_module
+    return self.load_module(spec.name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 37, in load_module
+    __import__(extant)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\pyparsing\__init__.py", line 140, in <module>
+    from .core import __diag__, __compat__
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1012, in get_code
+  File "<frozen importlib._bootstrap_external>", line 672, in _compile_bytecode
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001F3D2E764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 25, in <module>
+    import psycopg as Database
+ModuleNotFoundError: No module named 'psycopg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\models.py", line 3, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\base_user.py", line 59, in <module>
+    class AbstractBaseUser(models.Model):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 143, in __new__
+    new_class.add_to_class("_meta", Options(meta, app_label))
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 371, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\options.py", line 243, in contribute_to_class
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\connection.py", line 15, in __getattr__
+    return getattr(self._connections[self._alias], item)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\connection.py", line 62, in __getitem__
+    conn = self.create_connection(alias)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\utils.py", line 193, in create_connection
+    backend = load_backend(db["ENGINE"])
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\utils.py", line 113, in load_backend
+    return import_module("%s.base" % backend_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 27, in <module>
+    import psycopg2 as Database
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\psycopg2\__init__.py", line 51, in <module>
+    from psycopg2._psycopg import (                     # noqa
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x00000159A96764D0>> raised: ImproperlyConfigured('Error loading psycopg2 or psycopg module')
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 25, in <module>
+    import psycopg as Database
+ModuleNotFoundError: No module named 'psycopg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 27, in <module>
+    import psycopg2 as Database
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\psycopg2\__init__.py", line 51, in <module>
+    from psycopg2._psycopg import (                     # noqa
+ImportError: DLL load failed while importing _psycopg: The paging file is too small for this operation to complete.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\models.py", line 3, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\base_user.py", line 59, in <module>
+    class AbstractBaseUser(models.Model):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 143, in __new__
+    new_class.add_to_class("_meta", Options(meta, app_label))
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 371, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\options.py", line 243, in contribute_to_class
+    self.db_table, connection.ops.max_name_length()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\connection.py", line 15, in __getattr__
+    return getattr(self._connections[self._alias], item)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\connection.py", line 62, in __getitem__
+    conn = self.create_connection(alias)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\utils.py", line 193, in create_connection
+    backend = load_backend(db["ENGINE"])
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\utils.py", line 113, in load_backend
+    return import_module("%s.base" % backend_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 29, in <module>
+    raise ImproperlyConfigured("Error loading psycopg2 or psycopg module")
+django.core.exceptions.ImproperlyConfigured: Error loading psycopg2 or psycopg module
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001999DA764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2050, in try_parse
+    return packaging.version.Version(name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\version.py", line 266, in __init__
+    raise InvalidVersion(f"Invalid version: '{version}'")
+pkg_resources.extern.packaging.version.InvalidVersion: Invalid version: 'packages\python_dateutil'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 3260, in <module>
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 3234, in _call_aside
+    f(*args, **kwargs)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 3272, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 572, in _build_master
+    ws = cls()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 565, in __init__
+    self.add_entry(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 621, in add_entry
+    for dist in find_distributions(entry, True):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2092, in find_on_path
+    path_item_entries = _by_version_descending(filtered)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2062, in _by_version_descending
+    return sorted(names, key=_by_version, reverse=True)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2060, in _by_version
+    return [try_parse(part) for part in parts]
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2060, in <listcomp>
+    return [try_parse(part) for part in parts]
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2052, in try_parse
+    return packaging.version.Version('0')
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\version.py", line 271, in __init__
+    release=tuple(int(i) for i in match.group("release").split(".")),
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001ED1B8764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2050, in try_parse
+    return packaging.version.Version(name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\version.py", line 266, in __init__
+    raise InvalidVersion(f"Invalid version: '{version}'")
+pkg_resources.extern.packaging.version.InvalidVersion: Invalid version: 'packages\redis'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 3260, in <module>
+    def _initialize_master_working_set():
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 3234, in _call_aside
+    f(*args, **kwargs)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 3272, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 572, in _build_master
+    ws = cls()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 565, in __init__
+    self.add_entry(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 621, in add_entry
+    for dist in find_distributions(entry, True):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2092, in find_on_path
+    path_item_entries = _by_version_descending(filtered)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2062, in _by_version_descending
+    return sorted(names, key=_by_version, reverse=True)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2060, in _by_version
+    return [try_parse(part) for part in parts]
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2060, in <listcomp>
+    return [try_parse(part) for part in parts]
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 2052, in try_parse
+    return packaging.version.Version('0')
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\version.py", line 269, in __init__
+    self._version = _Version(
+  File "<string>", line 1, in <lambda>
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001DB1DF764D0>> raised: TypeError('issubclass() arg 1 must be a class')
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 197, in create
+    if not issubclass(app_config_class, AppConfig):
+TypeError: issubclass() arg 1 must be a class
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000027A394A64D0>> raised: TypeError('issubclass() arg 1 must be a class')
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 197, in create
+    if not issubclass(app_config_class, AppConfig):
+TypeError: issubclass() arg 1 must be a class
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000022F248764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 84, in <module>
+    __import__('pkg_resources.extern.packaging.requirements')
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\requirements.py", line 10, in <module>
+    from pkg_resources.extern.pyparsing import (  # noqa
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 52, in create_module
+    return self.load_module(spec.name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 37, in load_module
+    __import__(extant)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\pyparsing\__init__.py", line 140, in <module>
+    from .core import __diag__, __compat__
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1012, in get_code
+  File "<frozen importlib._bootstrap_external>", line 672, in _compile_bytecode
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x00000266BD8764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 84, in <module>
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\requirements.py", line 10, in <module>
+    from pkg_resources.extern.pyparsing import (  # noqa
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 52, in create_module
+    return self.load_module(spec.name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 37, in load_module
+    __import__(extant)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\pyparsing\__init__.py", line 140, in <module>
+    from .core import __diag__, __compat__
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1012, in get_code
+  File "<frozen importlib._bootstrap_external>", line 672, in _compile_bytecode
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001F75A7764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 84, in <module>
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\requirements.py", line 10, in <module>
+    from pkg_resources.extern.pyparsing import (  # noqa
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 52, in create_module
+    return self.load_module(spec.name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 37, in load_module
+    __import__(extant)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\pyparsing\__init__.py", line 140, in <module>
+    from .core import __diag__, __compat__
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 975, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1074, in get_data
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001B1603764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 84, in <module>
+    __import__('pkg_resources.extern.packaging.requirements')
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\requirements.py", line 10, in <module>
+    from pkg_resources.extern.pyparsing import (  # noqa
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 52, in create_module
+    return self.load_module(spec.name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 37, in load_module
+    __import__(extant)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\pyparsing\__init__.py", line 140, in <module>
+    from .core import __diag__, __compat__
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1012, in get_code
+  File "<frozen importlib._bootstrap_external>", line 672, in _compile_bytecode
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000019C506864D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 975, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1074, in get_data
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000027D721764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 32, in <module>
+    import plistlib
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\plistlib.py", line 70, in <module>
+    from xml.parsers.expat import ParserCreate
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\xml\parsers\expat.py", line 4, in <module>
+    from pyexpat import *
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000002812DE764D0>> raised: ImportError('DLL load failed while importing pyexpat: The paging file is too small for this operation to complete.')
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 32, in <module>
+    import plistlib
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\plistlib.py", line 70, in <module>
+    from xml.parsers.expat import ParserCreate
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\xml\parsers\expat.py", line 4, in <module>
+    from pyexpat import *
+ImportError: DLL load failed while importing pyexpat: The paging file is too small for this operation to complete.
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001F0AB7764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 84, in <module>
+    __import__('pkg_resources.extern.packaging.requirements')
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\requirements.py", line 10, in <module>
+    from pkg_resources.extern.pyparsing import (  # noqa
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 52, in create_module
+    return self.load_module(spec.name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 37, in load_module
+    __import__(extant)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\pyparsing\__init__.py", line 140, in <module>
+    from .core import __diag__, __compat__
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1012, in get_code
+  File "<frozen importlib._bootstrap_external>", line 672, in _compile_bytecode
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000002860E0764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\drf_yasg\__init__.py", line 2, in <module>
+    from pkg_resources import DistributionNotFound, get_distribution
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\__init__.py", line 84, in <module>
+    __import__('pkg_resources.extern.packaging.requirements')
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\packaging\requirements.py", line 10, in <module>
+    from pkg_resources.extern.pyparsing import (  # noqa
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 571, in module_from_spec
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 52, in create_module
+    return self.load_module(spec.name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\extern\__init__.py", line 37, in load_module
+    __import__(extant)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\pyparsing\__init__.py", line 140, in <module>
+    from .core import __diag__, __compat__
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\pyparsing\core.py", line 5798, in <module>
+    _builtin_exprs: List[ParserElement] = [
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\pkg_resources\_vendor\pyparsing\core.py", line 5799, in <listcomp>
+    v for v in vars().values() if isinstance(v, ParserElement)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\abc.py", line 119, in __instancecheck__
+    return _abc_instancecheck(cls, instance)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\abc.py", line 123, in __subclasscheck__
+    return _abc_subclasscheck(cls, subclass)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\abc.py", line 123, in __subclasscheck__
+    return _abc_subclasscheck(cls, subclass)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\abc.py", line 123, in __subclasscheck__
+    return _abc_subclasscheck(cls, subclass)
+MemoryError
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x000001C11B6764D0>> raised: ImproperlyConfigured('Error loading psycopg2 or psycopg module')
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 25, in <module>
+    import psycopg as Database
+ModuleNotFoundError: No module named 'psycopg'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 27, in <module>
+    import psycopg2 as Database
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\psycopg2\__init__.py", line 51, in <module>
+    from psycopg2._psycopg import (                     # noqa
+ImportError: DLL load failed while importing _psycopg: The paging file is too small for this operation to complete.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\models.py", line 3, in <module>
+    from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\base_user.py", line 59, in <module>
+    class AbstractBaseUser(models.Model):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 143, in __new__
+    new_class.add_to_class("_meta", Options(meta, app_label))
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\base.py", line 371, in add_to_class
+    value.contribute_to_class(cls, name)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\models\options.py", line 243, in contribute_to_class
+    self.db_table, connection.ops.max_name_length()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\connection.py", line 15, in __getattr__
+    return getattr(self._connections[self._alias], item)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\utils\connection.py", line 62, in __getitem__
+    conn = self.create_connection(alias)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\utils.py", line 193, in create_connection
+    backend = load_backend(db["ENGINE"])
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\utils.py", line 113, in load_backend
+    return import_module("%s.base" % backend_name)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\db\backends\postgresql\base.py", line 29, in <module>
+    raise ImproperlyConfigured("Error loading psycopg2 or psycopg module")
+django.core.exceptions.ImproperlyConfigured: Error loading psycopg2 or psycopg module
+Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x00000196809764D0>> raised: MemoryError()
+Traceback (most recent call last):
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.3056.0_x64__qbz5n2kfra8p0\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\admin\__init__.py", line 2, in <module>
+    from django.contrib.admin.filters import (
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\admin\filters.py", line 12, in <module>
+    from django.contrib.admin.options import IncorrectLookupParameters
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\admin\options.py", line 33, in <module>
+    from django.contrib.auth import get_permission_codename
+  File "d:\Work\Creato\creato-backend\identity_service_creato\.venv\lib\site-packages\django\contrib\auth\__init__.py", line 9, in <module>
+    from django.middleware.csrf import rotate_token
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 879, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1012, in get_code
+  File "<frozen importlib._bootstrap_external>", line 672, in _compile_bytecode
+MemoryError
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+Watching for file changes with StatReloader
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\utils\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\views.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def send_verification_email_task(instance):
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\authentication\tasks.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+D:\Work\Creato\creato-backend\identity_service_creato\core\celery.py changed, reloading.
+Watching for file changes with StatReloader
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+
+def accumulate(self, *args, **kwargs):
+    return 1
+
+
+def chunks(task, it, n):
+    return 1
+
+
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+
+def debug_task(self):
+    return 1
+
+
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+
+def my_first_task(duration):
+    return 1
+
+
+def xmap(task, it):
+    return 1
+
+
+def chain(*args, **kwargs):
+    return 1
+
+
+def backend_cleanup():
+    return 1
+
+
+def xstarmap(task, it):
+    return 1
+

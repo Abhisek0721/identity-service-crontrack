@@ -33,6 +33,8 @@ This is the backend microservice of Creato, a social media management software d
     DB_PORT=5432
    ```
 4. Run the server: `python manage.py runserver`
+5. Run Celery Worker: `celery -A core worker -l info`
+
 
 ## License
 
