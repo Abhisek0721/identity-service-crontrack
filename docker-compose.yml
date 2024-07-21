@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - DB_NAME=yourdbname
+      - DB_USER=yourdbuser
+      - DB_PASSWORD=yourdbpassword
+      - DB_HOST=db
+      - DB_PORT=5432
+      - RABBITMQ_HOST=host.docker.internal  # Use host.docker.internal to refer to the host machine
+      - RABBITMQ_PORT=5672
+
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: yourdbname
+      POSTGRES_USER: yourdbuser
+      POSTGRES_PASSWORD: yourdbpassword
+
+volumes:
+  postgres_data:
