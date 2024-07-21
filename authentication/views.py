@@ -8,14 +8,8 @@ from core.utils.api_response import api_response
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from django.db.models.signals import post_save
-from django.dispatch import receiver
-from users.models import User
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
-from django.utils.html import strip_tags
-import os
-from .tasks import my_first_task
-from core.stop_celery_worker import stop_celery_worker
+from core.rabbitmq import publish_message
+import json
 
 User = get_user_model()
 
@@ -30,6 +24,7 @@ class RegisterView(generics.CreateAPIView):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             data = serializer.save()
+            publish_message(json.dumps(data))
             return api_response(data=data, message="User registered successfully", status=status.HTTP_201_CREATED)
         
 
@@ -52,9 +47,6 @@ class LoginView(APIView):
                 "access_token": validated_data["access_token"],
                 "user": validated_data["user"]
             }
-            # send_verification_email_task.delay(validated_data)
-            my_first_task.delay(10)
-            # stop_celery_worker()
             return api_response(data=response_data, message="Login successful.", status=status.HTTP_200_OK)
 
 

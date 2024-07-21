@@ -1,10 +1,9 @@
 django
 djangorestframework
-django-redis # redis
 python-dotenv # for connecting to .env file
 psycopg2 # postres driver
 djangorestframework_simplejwt # for jwt auth
 drf-yasg # swagger (for api-docs)
-celery
 psutil
-django-redis
+redis
+pika
