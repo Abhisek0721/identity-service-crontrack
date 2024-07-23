@@ -2,7 +2,7 @@
 from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from workspaces.models import Workspace, WorkspaceMember
-from workspaces.serializers import CreateWorkspaceSerializer, WorkspaceSerializer, WorkspaceMemberSerializer
+from workspaces.serializers import CreateWorkspaceSerializer, WorkspaceSerializer, WorkspaceMemberSerializer, InviteMemberSerializer
 from core.utils.api_response import api_response
 from drf_yasg.utils import swagger_auto_schema
 from core.utils.decode_jwt import decode_jwt_token
@@ -56,3 +56,21 @@ class WorkspaceView(generics.GenericAPIView):
             return api_response(data=data, message="Workspace fetched successfully", status=status.HTTP_200_OK)
         except Workspace.DoesNotExist:
             return api_response(data=None, message="Workspace not found", status=status.HTTP_404_NOT_FOUND)
+
+class InviteMembers(generics.CreateAPIView):
+    permission_classes = (IsAuthenticated,)
+
+    # Invite members to workspace
+    def post(self, request):
+        user_id = decode_jwt_token(request).get('user_id')
+        data = request.data
+        data['invited_by'] = user_id
+        serializer = InviteMemberSerializer(data=data)
+        if serializer.is_valid(raise_exception=True):
+            is_user_admin = WorkspaceMember.objects.filter(
+                user=user_id,
+                role='admin'
+            ).filter()
+            if(not is_user_admin):
+                return api_response(data=None, message="User is not an admin", status=status.HTTP_403_FORBIDDEN)
+            

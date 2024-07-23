@@ -66,3 +66,9 @@ class CreateWorkspaceSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("An error occurred during workspace update.")
 
         
+class InviteMemberSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Workspace
+        fields = ('workspace_id', 'invited_by')
+    
+    
