@@ -38,3 +38,22 @@ class CreateWorkspaceSerializer(serializers.ModelSerializer):
             return workspace
         except User.DoesNotExist:
             raise serializers.ValidationError(f"User does not exist.")
+        
+    def update(self, validated_data):
+        try:
+            workspace_name = validated_data.get('workspace_name')
+            wordspace_id = validated_data.get('id')
+            member = WorkspaceMember.objects.filter(workspace=wordspace_id)
+            workspace = Workspace.objects.filter(id=wordspace_id).update(
+                workspace_name=workspace_name
+            )
+            if(not workspace):
+                raise serializers.ValidationError("workspace not found!")
+            workspace = CreateWorkspaceSerializer(workspace).data
+            workspace["member"] = WorkspaceMemberSerializer(member).data
+            return workspace
+        except Exception as error:
+            print(error)
+            raise error
+
+        
