@@ -9,12 +9,23 @@ class WorkspaceMemberSerializer(serializers.ModelSerializer):
                     'created_at', 'updated_at')
         read_only_fields = ('id', 'created_at', 'updated_at')
 
+class WorkspaceSerializer(serializers.ModelSerializer):
+    created_by = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), required=False)
+    class Meta:
+        model = Workspace
+        fields = ('id', 'workspace_name', 'created_by',
+                    'created_at', 'updated_at')
+        read_only_fields = ('id', 'workspace_name', 'created_by',
+                    'created_at', 'updated_at')
+
 class CreateWorkspaceSerializer(serializers.ModelSerializer):
+    created_by = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), required=False)
     class Meta:
         model = Workspace
         fields = ('id', 'workspace_name', 'created_by',
                     'created_at', 'updated_at')
         read_only_fields = ('id', 'created_at', 'updated_at')
+
     
     def create(self, validated_data):
         try:
@@ -34,26 +45,24 @@ class CreateWorkspaceSerializer(serializers.ModelSerializer):
                 user=created_by
             )
             workspace = CreateWorkspaceSerializer(workspace).data
-            workspace["member"] = WorkspaceMemberSerializer(member).data
+            workspace["members"] = WorkspaceMemberSerializer(member).data
             return workspace
         except User.DoesNotExist:
             raise serializers.ValidationError(f"User does not exist.")
         
-    def update(self, validated_data):
+    def update(self, instance, validated_data):
         try:
-            workspace_name = validated_data.get('workspace_name')
-            wordspace_id = validated_data.get('id')
-            member = WorkspaceMember.objects.filter(workspace=wordspace_id)
-            workspace = Workspace.objects.filter(id=wordspace_id).update(
-                workspace_name=workspace_name
-            )
-            if(not workspace):
-                raise serializers.ValidationError("workspace not found!")
-            workspace = CreateWorkspaceSerializer(workspace).data
-            workspace["member"] = WorkspaceMemberSerializer(member).data
-            return workspace
+            workspace_name = validated_data.get('workspace_name', instance.workspace_name)
+            
+            instance.workspace_name = workspace_name
+            instance.save()
+
+            members = WorkspaceMember.objects.filter(workspace=instance.id)
+            workspace_data = CreateWorkspaceSerializer(instance).data
+            workspace_data["members"] = WorkspaceMemberSerializer(members, many=True).data
+            return workspace_data
         except Exception as error:
             print(error)
-            raise error
+            raise serializers.ValidationError("An error occurred during workspace update.")
 
         

@@ -1,10 +1,12 @@
 # users/urls.py
 from django.urls import path, include
-from workspaces.views import CreateWorkspaceView
+from workspaces.views import WorkspaceView
 
 
 workspace_patterns = [
-    path('create-workspace', CreateWorkspaceView.as_view(), name='create workspace'),
+    path(r'', WorkspaceView.as_view(), name='create workspace'),
+    path(r'', WorkspaceView.as_view(), name='update workspace'),
+    path(r'<str:workspace_id>/', WorkspaceView.as_view(), name='get workspace')
 ]
 
 urlpatterns = [
