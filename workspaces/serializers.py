@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from workspaces.models import Workspace, WorkspaceMember
 from users.models import User
+from workspaces.constants import ROLE_CHOICES
 
 class WorkspaceMemberSerializer(serializers.ModelSerializer):
     class Meta:
@@ -65,10 +66,12 @@ class CreateWorkspaceSerializer(serializers.ModelSerializer):
             print(error)
             raise serializers.ValidationError("An error occurred during workspace update.")
 
-        
-class InviteMemberSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Workspace
-        fields = ('workspace_id', 'invited_by')
-    
+
+class MemberDTO(serializers.Serializer):
+    email = serializers.EmailField()
+    role = serializers.ChoiceField(choices=ROLE_CHOICES)
+
+class InviteMemberDTO(serializers.Serializer):
+    workspace_id = serializers.UUIDField()
+    members_to_invite = MemberDTO(many=True)
     
