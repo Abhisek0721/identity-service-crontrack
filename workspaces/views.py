@@ -26,5 +26,17 @@ class CreateWorkspaceView(generics.CreateAPIView):
 
         
 
-
+class UpdateWorkspaceView(generics.CreateAPIView):
+    permission_classes = (IsAuthenticated,)
+    @swagger_auto_schema(
+        request_body=CreateWorkspaceSerializer,
+        responses={status.HTTP_200_OK: "Workspace successful response"},
+        operation_description="Update a workspace."
+    )
+    def patch(self, request):
+        data = request.data
+        serializer = CreateWorkspaceSerializer(data=data)
+        if serializer.is_valid(raise_exception=True):
+            data = serializer.update()
+            return api_response(data=data, message="Workspace created successfully", status=status.HTTP_201_CREATED)
 
