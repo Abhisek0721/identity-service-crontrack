@@ -33,7 +33,7 @@ def send_verification_email(full_name, email, verification_token):
 def send_workspace_invite(email, verification_token):
     subject = 'You are invited to workspace'
     html_message = render_to_string('verification_email.html', {
-        'verification_link': f"http://localhost:3000/verify/{verification_token}",
+        'verification_link': f"{settings.FRONTEND_BASE_URL}/verify/verify-user/{verification_token}",
         'app_name': "Creato"
     })
     plain_message = strip_tags(html_message)
