@@ -39,13 +39,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data)
-        token_serializer = CustomTokenObtainPairSerializer()
-        refresh_token = token_serializer.get_token(user)
-        return {
-            'refresh_token': str(refresh_token),
-            'access_token': str(refresh_token.access_token),
-            'user': UserSerializer(user).data,
-        }
+        return UserSerializer(user).data
 
 
 class LoginSerializer(serializers.Serializer):

@@ -7,3 +7,5 @@ drf-yasg # swagger (for api-docs)
 psutil
 redis
 pika
+redis 
+django-redis
