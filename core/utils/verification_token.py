@@ -13,10 +13,11 @@ def generate_and_save_token(email, verification_type, role=None, workspace_id=No
     cache.set(token, json.dumps(data), timeout=86400)  # Token valid for 1 day
     return token
 
-def get_data_from_token(token):
+def get_data_from_token(token, delete_token=True):
     data = cache.get(token)
     if data:
         data = json.loads(data)
-        cache.delete(token)
+        if delete_token:
+            cache.delete(token)
         return data
     return None
