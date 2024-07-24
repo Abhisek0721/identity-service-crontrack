@@ -23,7 +23,7 @@ def send_workspace_invite(email, role, workspace_name, invited_by, verification_
         'invited_by': invited_by,
         'role': role,
         'workspace_name': workspace_name,
-        'verification_link': f"http://localhost:3000/workspace-invite/{verification_token}",
+        'verification_link': f"{settings.FRONTEND_BASE_URL}/verify/workspace-invite/{verification_token}",
         'app_name': "Creato"
     })
     plain_message = strip_tags(html_message)

@@ -118,6 +118,9 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(weeks=52*30),     # 30 years approx.
 }
 
+# FRONTEND setting
+FRONTEND_BASE_URL=os.getenv('FRONTEND_BASE_URL')
+
 # RabbitMQ settings
 RABBITMQ_USER = os.environ.get('RABBITMQ_USER')
 RABBITMQ_PASSWORD = os.environ.get('RABBITMQ_PASSWORD')
