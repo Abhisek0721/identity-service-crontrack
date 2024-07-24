@@ -8,8 +8,9 @@ from core.utils.api_response import api_response
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from django.db.models.signals import post_save
-from core.rabbitmq import publish_message
+from core.rabbitmq import publish_email_verification
 import json
+from core.utils.verification_token import generate_and_save_token
 
 User = get_user_model()
 
@@ -23,9 +24,14 @@ class RegisterView(generics.CreateAPIView):
     def post(self, request, *args, **kwargs):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
-            data = serializer.save()
-            publish_message(json.dumps(data))
-            return api_response(data=data, message="User registered successfully", status=status.HTTP_201_CREATED)
+            response_data = serializer.save()
+            send_email_data = {
+                "full_name": response_data.get("full_name"),
+                "email": response_data.get("email"),
+                "verification_token": generate_and_save_token(response_data.get('email'), 'email_verification'),
+            }
+            publish_email_verification(json.dumps(send_email_data))
+            return api_response(data=response_data, message="User registered successfully", status=status.HTTP_201_CREATED)
         
 
 

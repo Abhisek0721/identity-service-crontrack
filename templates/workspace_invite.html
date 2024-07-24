@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workspace Invite</title>
+</head>
+<body>
+    <p>Hello</p>
+    <p>
+        {{ invited_by }} has invited you to <b>{{ workspace_name  }}</b> workspace. 
+        Please click the link below to accept the <b>{{ role }}</b> role:
+    </p>
+    <p><a href="{{ verification_link }}">Accept Invite</a></p>
+
+    <p>Best regards,</p>
+    <p>{{ app_name }} Team</p>
+</body>
+</html>

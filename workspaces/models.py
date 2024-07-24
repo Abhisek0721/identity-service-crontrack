@@ -7,7 +7,7 @@ from .constants import ROLE_CHOICES
 class Workspace(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     workspace_name = models.CharField(max_length=255, null=False)
-    created_by = models.ForeignKey(User, on_delete=models.RESTRICT, related_name='user_workspaces')
+    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='user_workspaces')
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
