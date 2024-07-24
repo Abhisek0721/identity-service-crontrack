@@ -77,6 +77,18 @@ DATABASES = {
     }
 }
 
+# cache setting
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django_redis.cache.RedisCache',
+#         'LOCATION': os.getenv('REDIS_HOST', 'redis://127.0.0.1:6379/1'),
+#         'OPTIONS': {
+#             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+#         }
+#     }
+# }
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -106,14 +118,19 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(weeks=52*30),     # 30 years approx.
 }
 
+# FRONTEND setting
+FRONTEND_BASE_URL=os.getenv('FRONTEND_BASE_URL')
+
 # RabbitMQ settings
 RABBITMQ_USER = os.environ.get('RABBITMQ_USER')
 RABBITMQ_PASSWORD = os.environ.get('RABBITMQ_PASSWORD')
 RABBITMQ_HOST = os.environ.get('RABBITMQ_HOST')
 RABBITMQ_PORT = os.environ.get('RABBITMQ_PORT', '5672')
-RABBITMQ_QUEUE = os.getenv('RABBITMQ_QUEUE')
-RABBITMQ_EXCHANGE=os.getenv('RABBITMQ_EXCHANGE')
-RABBITMQ_ROUTING_KEY=os.getenv('RABBITMQ_ROUTING_KEY')
+RABBITMQ_EXCHANGE = os.getenv('RABBITMQ_EXCHANGE')
+RABBITMQ_EMAIL_VERIFICATION_QUEUE = os.getenv('RABBITMQ_EMAIL_VERIFICATION_QUEUE')
+RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY = os.getenv('RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY')
+RABBITMQ_WORKSPACE_INVITE_QUEUE = os.getenv('RABBITMQ_WORKSPACE_INVITE_QUEUE')
+RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY = os.getenv('RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY')
 
 # for email service
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
