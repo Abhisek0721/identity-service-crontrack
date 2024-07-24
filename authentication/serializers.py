@@ -67,3 +67,10 @@ class LoginSerializer(serializers.Serializer):
             'access_token': str(refresh_token.access_token),
             'user': UserSerializer(user).data,
         }
+    
+
+class ResendVerificationEmailDTO(serializers.Serializer):
+    email = serializers.EmailField()
+
+class VerifyUserDTO(serializers.Serializer):
+    verification_token = serializers.UUIDField()

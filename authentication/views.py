@@ -3,14 +3,14 @@ from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 from django.contrib.auth import get_user_model
-from authentication.serializers import RegisterSerializer, LoginSerializer
+from authentication.serializers import RegisterSerializer, LoginSerializer, ResendVerificationEmailDTO, VerifyUserDTO
 from core.utils.api_response import api_response
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from django.db.models.signals import post_save
 from core.rabbitmq import publish_email_verification
 import json
-from core.utils.verification_token import generate_and_save_token
+from core.utils.verification_token import generate_and_save_token, get_data_from_token
 
 User = get_user_model()
 
@@ -56,9 +56,39 @@ class LoginView(APIView):
             return api_response(data=response_data, message="Login successful.", status=status.HTTP_200_OK)
 
 
-# @receiver(post_save, sender=User)
-# def send_verification_email(sender, instance, created, **kwargs):
-#     print("Send Verification Email Event Triggered")
-#     if created:
-#         send_verification_email_task.delay("Email sent successfully")
-#         pass
+class ResendVerificationEmailView(APIView):
+    permission_classes = (AllowAny, )
+
+    def post(self, request):
+        serializer = ResendVerificationEmailDTO(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            validated_data = serializer.validated_data
+            user = User.objects.filter(
+                email=validated_data.get('email')
+            ).first()
+            if not user:
+                return api_response(message="User with this email is not registered.", status=status.HTTP_400_BAD_REQUEST)
+            send_email_data = {
+                "full_name": user.full_name,
+                "email": user.email,
+                "verification_token": generate_and_save_token(user.email, 'email_verification'),
+            }
+            publish_email_verification(json.dumps(send_email_data))
+            return api_response(message="Sent email verification successfully.", status=status.HTTP_200_OK)
+        
+class VerifyUserView(APIView):
+    permission_classes = (AllowAny, )
+
+    def patch(self, request):
+        serializer = VerifyUserDTO(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            validated_data = serializer.validated_data
+            user = get_data_from_token(validated_data.get('verification_token'))
+            if not user:
+                return api_response(message="Invalid or Expired verification link.", status=status.HTTP_400_BAD_REQUEST)
+            User.objects.filter(
+                email=user.get('email')
+            ).update(
+                verified=True
+            )
+            return api_response(message="Verified successfully.", status=status.HTTP_200_OK)
