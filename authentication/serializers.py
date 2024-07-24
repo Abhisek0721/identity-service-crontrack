@@ -74,3 +74,9 @@ class ResendVerificationEmailDTO(serializers.Serializer):
 
 class VerifyUserDTO(serializers.Serializer):
     verification_token = serializers.UUIDField()
+
+class ForgotPasswordDTO(serializers.Serializer):
+    verification_token = serializers.UUIDField()
+    new_password = serializers.CharField(
+        write_only=True, required=True, validators=[validate_password]
+    )
