@@ -2,13 +2,7 @@ from rest_framework import serializers
 from workspaces.models import Workspace, WorkspaceMember
 from users.models import User
 from workspaces.constants import ROLE_CHOICES
-
-class WorkspaceMemberSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = WorkspaceMember
-        fields = ('id', 'workspace', 'user', 'role',
-                    'created_at', 'updated_at')
-        read_only_fields = ('id', 'created_at', 'updated_at')
+from users.serializers import UserSerializer
 
 class WorkspaceSerializer(serializers.ModelSerializer):
     created_by = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), required=False)
@@ -18,6 +12,15 @@ class WorkspaceSerializer(serializers.ModelSerializer):
                     'created_at', 'updated_at')
         read_only_fields = ('id', 'workspace_name', 'created_by',
                     'created_at', 'updated_at')
+        
+class WorkspaceMemberSerializer(serializers.ModelSerializer):
+    user = UserSerializer()
+    workspace = WorkspaceSerializer()
+    class Meta:
+        model = WorkspaceMember
+        fields = ('id', 'workspace', 'user', 'role',
+                    'created_at', 'updated_at')
+        read_only_fields = ('id', 'created_at', 'updated_at')
 
 class CreateWorkspaceSerializer(serializers.ModelSerializer):
     created_by = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), required=False)
@@ -74,4 +77,6 @@ class MemberDTO(serializers.Serializer):
 class InviteMemberDTO(serializers.Serializer):
     workspace_id = serializers.UUIDField()
     members_to_invite = MemberDTO(many=True)
-    
+
+class VerifyInvitedMembersDTO(serializers.Serializer):
+    verification_token = serializers.UUIDField()
