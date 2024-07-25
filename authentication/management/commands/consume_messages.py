@@ -11,6 +11,10 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
     help = 'Consume messages from RabbitMQ queue'
 
+    def __init__(self):
+        super().__init__()
+        self.stop_event = threading.Event()
+
     def handle(self, *args, **kwargs):
         self.stdout.write(self.style.SUCCESS('Starting to consume messages from RabbitMQ...'))
 
@@ -23,6 +27,9 @@ class Command(BaseCommand):
             email_thread.start()
             invite_thread.start()
 
+            # Wait for stop event
+            self.stop_event.wait()
+
             # Join the threads to wait for their completion
             email_thread.join()
             invite_thread.join()
@@ -34,16 +41,22 @@ class Command(BaseCommand):
 
     def consume_email_verification(self):
         try:
-            consume_email_verification(process_email_verification)
-            self.stdout.write(self.style.SUCCESS('Consuming email verification messages...'))
+            while not self.stop_event.is_set():
+                consume_email_verification(process_email_verification)
+                self.stdout.write(self.style.SUCCESS('Consuming email verification messages...'))
         except Exception as error:
             logger.error("Error in email verification consumer: %s", error)
             traceback.print_exc()
 
     def consume_workspace_invite(self):
         try:
-            consume_workspace_invite(process_workspace_invite)
-            self.stdout.write(self.style.SUCCESS('Consuming workspace invite messages...'))
+            while not self.stop_event.is_set():
+                consume_workspace_invite(process_workspace_invite)
+                self.stdout.write(self.style.SUCCESS('Consuming workspace invite messages...'))
         except Exception as error:
             logger.error("Error in workspace invite consumer: %s", error)
             traceback.print_exc()
+    
+    def stop(self, *args, **kwargs):
+        self.stdout.write(self.style.SUCCESS('Stopping consumers...'))
+        self.stop_event.set()

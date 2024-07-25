@@ -13,6 +13,10 @@ def process_email_verification(body):
     email = message.get('email')
     verification_token = message.get('verification_token')
     data_from_token = get_data_from_token(token=verification_token, delete_token=False)
+    print("verification_token", verification_token)
+    if not data_from_token:
+        print("token is not in cache")
+        return
     if email and verification_token and data_from_token.get('type') == 'email_verification':
         send_verification_email(full_name, email, verification_token)
     else:

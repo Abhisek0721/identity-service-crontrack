@@ -2,7 +2,7 @@ import uuid
 import json
 from django.core.cache import cache
 
-def generate_and_save_token(email, verification_type, role=None, workspace_id=None):
+def generate_and_save_token(email, verification_type, role='', workspace_id=''):
     token = str(uuid.uuid4())
     data = {
         'email': email,

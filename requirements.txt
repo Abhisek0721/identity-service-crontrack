@@ -9,3 +9,5 @@ redis
 pika
 redis 
 django-redis
+psutil
+
