@@ -1,15 +1,17 @@
 # users/views.py
 from rest_framework import generics, status
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from workspaces.models import Workspace, WorkspaceMember
-from workspaces.serializers import CreateWorkspaceSerializer, WorkspaceSerializer, WorkspaceMemberSerializer, InviteMemberDTO
+from workspaces.serializers import CreateWorkspaceSerializer, WorkspaceSerializer, WorkspaceMemberSerializer, InviteMemberDTO, VerifyInvitedMembersDTO
 from core.utils.api_response import api_response
 from drf_yasg.utils import swagger_auto_schema
 from core.utils.decode_jwt import decode_jwt_token
 from core.rabbitmq import publish_workspace_invite
-from core.utils.verification_token import generate_and_save_token
+from core.utils.verification_token import generate_and_save_token, get_data_from_token
 import json
 import traceback
+from users.models import User
+from django.shortcuts import get_object_or_404
 
 
 class WorkspaceView(generics.GenericAPIView):
@@ -90,6 +92,42 @@ class InviteMembersView(generics.CreateAPIView):
                     print(invite_data)
                     publish_workspace_invite(json.dumps(invite_data))
                 return api_response(data=data, message="Invited to the workspace successfully", status=status.HTTP_200_OK)
+        except Exception as error:
+            print(error)
+            traceback.print_exc()
+            raise error
+        
+
+class VerifyInvitedMembers(generics.UpdateAPIView):
+    permission_classes = (AllowAny, )
+
+    # Verify invited members
+    def patch(self, request):
+        try:
+            data = request.data
+            serializer = VerifyInvitedMembersDTO(data=data)
+            serializer.is_valid(raise_exception=True)
+            validated_data = serializer.validated_data
+
+            user_data = get_data_from_token(validated_data.get('verification_token'))
+            if not user_data:
+                return api_response(message="Invalid or Expired verification link.", status=status.HTTP_400_BAD_REQUEST)
+
+            user = User.objects.filter(email=user_data.get('email')).first()
+            if not user:
+                return api_response(message="User is not registered yet", status=status.HTTP_400_BAD_REQUEST)
+
+            workspace = get_object_or_404(Workspace, id=user_data.get("workspace_id"))
+            workspace_member, is_created = WorkspaceMember.objects.update_or_create(
+                workspace=workspace,
+                user=user,
+                defaults={"role": user_data.get("role")}
+            )
+
+            workspace_member_data = WorkspaceMemberSerializer(workspace_member).data
+            message = f"User is added to {workspace.workspace_name} workspace as a {user_data.get('role')}"
+            workspace_member_data["is_new_member"] = is_created
+            return api_response(data=workspace_member_data, message=message, status=status.HTTP_200_OK)
         except Exception as error:
             print(error)
             traceback.print_exc()
