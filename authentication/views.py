@@ -53,9 +53,11 @@ class LoginView(APIView):
         if serializer.is_valid(raise_exception=True):
             validated_data = serializer.validated_data
             workspace_member = WorkspaceMember.objects.filter(
-                user=validated_data["user"]
-            )
-            user_workspace = WorkspaceMemberSerializer(workspace_member).data
+                user=validated_data["user"].get('id')
+            ).first()
+            user_workspace = None
+            if workspace_member:
+                user_workspace = WorkspaceMemberSerializer(workspace_member).data
             response_data = {
                 "access_token": validated_data["access_token"],
                 "user": validated_data["user"],
