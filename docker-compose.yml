@@ -18,6 +18,8 @@ services:
       - DB_HOST=${DB_HOST}
       - DB_PORT=${DB_PORT}
       - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_DB=${REDIS_DB}
       - APP_NAME=${APP_NAME}
       - EMAIL_HOST_USER = ${EMAIL_HOST_USER}
       - EMAIL_HOST_PASSWORD = ${EMAIL_HOST_PASSWORD}
@@ -43,6 +45,12 @@ services:
       POSTGRES_DB: ${DB_NAME}
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
+  
+  identity-redis-service-creato-dev:
+    image: redis:6.2.6-alpine
+    restart: always
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
 
 volumes:
   postgres_data:

@@ -15,12 +15,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project
 COPY . /usr/src/app/
 
-# Create a user to run the application
-RUN adduser --disabled-password --gecos '' djangouser
+# # Create a user to run the application
+# RUN adduser --disabled-password --gecos '' djangouser
 
-# Set ownership and permissions
-RUN chown -R djangouser:djangouser /usr/src/app
-USER djangouser
+# # Set ownership and permissions
+# RUN chown -R djangouser:djangouser /usr/src/app
+# USER djangouser
 
 # Expose the port the app runs on
 EXPOSE ${APP_PORT}
