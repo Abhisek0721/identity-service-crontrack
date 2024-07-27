@@ -72,13 +72,13 @@ DATABASES = {
         'NAME': os.getenv('DB_NAME'),
         'USER': os.getenv('DB_USER'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': os.getenv('DB_PORT'),
     }
 }
 
 # Redis configuration
-REDIS_HOST = os.getenv('REDIS_HOST', 'identity-redis-service-creato-dev')
+REDIS_HOST = os.getenv('REDIS_HOST', 'localhost')
 REDIS_PORT = os.getenv('REDIS_PORT', 6379)
 REDIS_DB = os.getenv('REDIS_DB', 0)
 
@@ -129,7 +129,7 @@ FRONTEND_BASE_URL=os.getenv('FRONTEND_BASE_URL')
 # RabbitMQ settings
 RABBITMQ_USER = os.environ.get('RABBITMQ_USER')
 RABBITMQ_PASSWORD = os.environ.get('RABBITMQ_PASSWORD')
-RABBITMQ_HOST = os.environ.get('RABBITMQ_HOST')
+RABBITMQ_HOST = os.environ.get('RABBITMQ_HOST', 'localhost')
 RABBITMQ_PORT = os.environ.get('RABBITMQ_PORT', '5672')
 RABBITMQ_EXCHANGE = os.getenv('RABBITMQ_EXCHANGE')
 RABBITMQ_EMAIL_VERIFICATION_QUEUE = os.getenv('RABBITMQ_EMAIL_VERIFICATION_QUEUE')
