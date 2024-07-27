@@ -55,6 +55,8 @@ class LoginSerializer(serializers.Serializer):
                 'request'), email=email, password=password)
             if not user:
                 raise serializers.ValidationError("Invalid login credentials.")
+            if not user.verified:
+                raise serializers.ValidationError("User is not verified.")
         else:
             raise serializers.ValidationError(
                 "Must include 'email' and 'password'.")
