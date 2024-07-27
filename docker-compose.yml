@@ -1,31 +1,48 @@
 version: '3.9'
 
 services:
-  web:
+  identity-service-creato-dev:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/app
+    command: sh -c "python manage.py migrate && python manage.py consume_messages & exec python manage.py runserver 0.0.0.0:${APP_PORT}"
     ports:
-      - "8000:8000"
+      - ${APP_PORT}:${APP_PORT}
+    restart: always
+    depends_on:
+      - identity-postgres-service-creato-dev
     environment:
       - DEBUG=1
-      - DB_NAME=yourdbname
-      - DB_USER=yourdbuser
-      - DB_PASSWORD=yourdbpassword
-      - DB_HOST=db
-      - DB_PORT=5432
-      - RABBITMQ_HOST=host.docker.internal  # Use host.docker.internal to refer to the host machine
-      - RABBITMQ_PORT=5672
+      - SECRET_KEY=${SECRET_KEY}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - REDIS_HOST=${REDIS_HOST}
+      - APP_NAME=${APP_NAME}
+      - EMAIL_HOST_USER = ${EMAIL_HOST_USER}
+      - EMAIL_HOST_PASSWORD = ${EMAIL_HOST_PASSWORD}
+      - FRONTEND_BASE_URL=${FRONTEND_BASE_URL}
+      - RABBITMQ_HOST=${RABBITMQ_HOST}
+      - RABBITMQ_PORT=${RABBITMQ_PORT}
+      - RABBITMQ_USER=${RABBITMQ_USER}
+      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
+      - RABBITMQ_EXCHANGE=${RABBITMQ_EXCHANGE}
+      - RABBITMQ_EMAIL_VERIFICATION_QUEUE=${RABBITMQ_EMAIL_VERIFICATION_QUEUE}
+      - RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY=${RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY}
+      - RABBITMQ_WORKSPACE_INVITE_QUEUE = ${RABBITMQ_WORKSPACE_INVITE_QUEUE}
+      - RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY = ${RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY}
 
-  db:
-    image: postgres:13
+  identity-postgres-service-creato-dev:
+    image: postgres:14.1-alpine
+    restart: always
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    ports:
+    - ${DB_PORT}:${DB_PORT}
     environment:
-      POSTGRES_DB: yourdbname
-      POSTGRES_USER: yourdbuser
-      POSTGRES_PASSWORD: yourdbpassword
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
 
 volumes:
   postgres_data:

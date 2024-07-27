@@ -18,7 +18,7 @@ class Workspace(models.Model):
 
 class WorkspaceMember(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE, related_name='workspace_team')
+    workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE, null=True, related_name='workspace_team')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_team')
     role = models.CharField(max_length=50, choices=ROLE_CHOICES, default='admin')
 

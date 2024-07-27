@@ -12,7 +12,8 @@ from core.rabbitmq import publish_email_verification
 import json
 from core.utils.verification_token import generate_and_save_token, get_data_from_token
 from django.contrib.auth.hashers import make_password
-
+from workspaces.models import WorkspaceMember
+from workspaces.serializers import WorkspaceMemberSerializer
 
 User = get_user_model()
 
@@ -30,7 +31,7 @@ class RegisterView(generics.CreateAPIView):
             send_email_data = {
                 "full_name": response_data.get("full_name"),
                 "email": response_data.get("email"),
-                "verification_token": generate_and_save_token(response_data.get('email'), 'email_verification'),
+                "verification_token": generate_and_save_token(email=response_data.get('email'), verification_type='email_verification'),
             }
             publish_email_verification(json.dumps(send_email_data))
             return api_response(data=response_data, message="User registered successfully", status=status.HTTP_201_CREATED)
@@ -51,9 +52,14 @@ class LoginView(APIView):
         serializer = LoginSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             validated_data = serializer.validated_data
+            workspace_member = WorkspaceMember.objects.filter(
+                user=validated_data["user"]
+            )
+            user_workspace = WorkspaceMemberSerializer(workspace_member).data
             response_data = {
                 "access_token": validated_data["access_token"],
-                "user": validated_data["user"]
+                "user": validated_data["user"],
+                "user_workspace": user_workspace
             }
             return api_response(data=response_data, message="Login successful.", status=status.HTTP_200_OK)
 
@@ -112,10 +118,10 @@ class ForgotPasswordView(APIView):
             send_email_data = {
                 "full_name": user.full_name,
                 "email": user.email,
-                "verification_token": generate_and_save_token(user.email, 'forgot_password'),
+                "verification_token": generate_and_save_token(email=user.email, verification_type='forgot_password'),
             }
             publish_email_verification(json.dumps(send_email_data))
-            return api_response(message="Sent forgot password email.", status=status.HTTP_200_OK)
+            return api_response(data=send_email_data, message="Sent forgot password email.", status=status.HTTP_200_OK)
         
     # Update forgot password
     def patch(self, request):
