@@ -12,10 +12,9 @@ def get_connection():
         print(f"An unexpected error occurred: {e}")
 
 # Publish messages
-def publish_message(queue, exchange, routing_key, message):
+def publish_message(exchange, routing_key, message):
     connection = get_connection()
     channel = connection.channel()
-    channel.queue_declare(queue=queue, durable=True)
     channel.basic_publish(
         exchange=exchange,
         routing_key=routing_key,
@@ -28,7 +27,6 @@ def publish_message(queue, exchange, routing_key, message):
 
 def publish_email_verification(message):
     publish_message(
-        queue=settings.RABBITMQ_EMAIL_VERIFICATION_QUEUE,
         exchange=settings.RABBITMQ_EXCHANGE,
         routing_key=settings.RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY,
         message=message
@@ -36,7 +34,6 @@ def publish_email_verification(message):
 
 def publish_workspace_invite(message):
     publish_message(
-        queue=settings.RABBITMQ_WORKSPACE_INVITE_QUEUE,
         exchange=settings.RABBITMQ_EXCHANGE,
         routing_key=settings.RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY,
         message=message
