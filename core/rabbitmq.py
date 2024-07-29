@@ -36,7 +36,7 @@ def publish_email_verification(message):
 
 def publish_workspace_invite(message):
     publish_message(
-        # queue=settings.RABBITMQ_WORKSPACE_INVITE_QUEUE,
+        queue=settings.RABBITMQ_WORKSPACE_INVITE_QUEUE,
         exchange=settings.RABBITMQ_EXCHANGE,
         routing_key=settings.RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY,
         message=message
