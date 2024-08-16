@@ -127,7 +127,7 @@ class ForgotPasswordView(APIView):
                 "verification_token": generate_and_save_token(email=user.email, verification_type='forgot_password'),
             }
             publish_email_verification(json.dumps(send_email_data))
-            return api_response(data=send_email_data, message="Sent forgot password email.", status=status.HTTP_200_OK)
+            return api_response(message="Sent forgot password email.", status=status.HTTP_200_OK)
         
     # Update forgot password
     def patch(self, request):
