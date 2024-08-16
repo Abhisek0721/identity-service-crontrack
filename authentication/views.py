@@ -34,7 +34,7 @@ class RegisterView(generics.CreateAPIView):
                 "verification_token": generate_and_save_token(email=response_data.get('email'), verification_type='email_verification'),
             }
             publish_email_verification(json.dumps(send_email_data))
-            return api_response(data=response_data, message="User registered successfully", status=status.HTTP_201_CREATED)
+            return api_response(data=response_data, message="User registered successfully. Please verify your email.", status=status.HTTP_201_CREATED)
         
 
 
@@ -94,14 +94,18 @@ class VerifyUserView(APIView):
         if serializer.is_valid(raise_exception=True):
             validated_data = serializer.validated_data
             user = get_data_from_token(validated_data.get('verification_token'))
+            response_data = {
+                "verified": False
+            }
             if not user:
-                return api_response(message="Invalid or Expired verification link.", status=status.HTTP_400_BAD_REQUEST)
+                return api_response(data=response_data, message="Invalid or Expired verification link.", status=status.HTTP_400_BAD_REQUEST)
             user = User.objects.filter(email=user.get('email')).first()
             if not user:
-                return api_response(message="User not found.", status=status.HTTP_404_NOT_FOUND)
+                return api_response(data=response_data, message="User not found.", status=status.HTTP_404_NOT_FOUND)
             user.verified = True
             user.save()
-            return api_response(message="Verified successfully.", status=status.HTTP_200_OK)
+            response_data['verified'] = True
+            return api_response(data=response_data, message="Verified successfully.", status=status.HTTP_200_OK)
         
 
 class ForgotPasswordView(APIView):
