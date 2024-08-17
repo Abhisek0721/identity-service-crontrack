@@ -121,6 +121,7 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=7),  # Example: 7 days
     'REFRESH_TOKEN_LIFETIME': timedelta(weeks=52*30),     # 30 years approx.
+    'SIGNING_KEY': os.getenv('JWT_SECRET_KEY')
 }
 
 # FRONTEND setting
