@@ -59,7 +59,7 @@ class WorkspaceView(generics.GenericAPIView):
             instance = Workspace.objects.get(pk=workspace_id)
             data = WorkspaceSerializer(instance).data
             members = WorkspaceMember.objects.filter(workspace=instance.id)
-            data["members"] = WorkspaceMemberSerializer(members, many=True).data
+            data["members"] = WorkspaceMemberSerializer(members, many=True, context={'include_user': True}).data
             return api_response(data=data, message="Workspace fetched successfully", status=status.HTTP_200_OK)
         except Workspace.DoesNotExist:
             return api_response(data=None, message="Workspace not found", status=status.HTTP_404_NOT_FOUND)

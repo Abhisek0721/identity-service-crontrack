@@ -14,13 +14,27 @@ class WorkspaceSerializer(serializers.ModelSerializer):
                     'created_at', 'updated_at')
         
 class WorkspaceMemberSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
     workspace = WorkspaceSerializer()
+    user = serializers.SerializerMethodField()
+
     class Meta:
         model = WorkspaceMember
         fields = ('id', 'workspace', 'user', 'role',
                     'created_at', 'updated_at')
         read_only_fields = ('id', 'created_at', 'updated_at')
+
+    def get_user(self, obj):
+        # Include user data only if 'include_user' is set to True in the context
+        if self.context.get('include_user', False):
+            return UserSerializer(obj.user).data
+        return
+    
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        if representation['user'] is None:
+            # Remove the 'user' field entirely if it's None
+            representation.pop('user')
+        return representation
 
 class CreateWorkspaceSerializer(serializers.ModelSerializer):
     created_by = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), required=False)
