@@ -33,6 +33,8 @@ services:
       - RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY=${RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY}
       - RABBITMQ_WORKSPACE_INVITE_QUEUE = ${RABBITMQ_WORKSPACE_INVITE_QUEUE}
       - RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY = ${RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY}
+    networks:
+      - default
 
   identity-postgres-service-creato-dev:
     image: postgres:14.1-alpine
@@ -54,3 +56,6 @@ services:
 
 volumes:
   postgres_data:
+
+networks:
+  default:
