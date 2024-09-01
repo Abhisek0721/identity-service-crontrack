@@ -1,6 +1,17 @@
 version: '3.9'
 
 services:
+  rabbitmq-creato-dev:
+    image: rabbitmq:3-management
+    ports:
+      - ${RABBITMQ_PORT}:${RABBITMQ_PORT}
+      - ${FRONTEND_MQ_PORT}:${FRONTEND_MQ_PORT}
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+    networks:
+      - default
+      
   identity-service-creato-dev:
     build: .
     command: sh -c "python manage.py migrate && python manage.py consume_messages & exec python manage.py runserver 0.0.0.0:${APP_PORT}"
@@ -9,6 +20,8 @@ services:
     restart: always
     depends_on:
       - identity-postgres-service-creato-dev
+      - identity-redis-service-creato-dev
+      - rabbitmq-creato-dev
     environment:
       - DEBUG=1
       - SECRET_KEY=${SECRET_KEY}
@@ -26,6 +39,7 @@ services:
       - FRONTEND_BASE_URL=${FRONTEND_BASE_URL}
       - RABBITMQ_HOST=${RABBITMQ_HOST}
       - RABBITMQ_PORT=${RABBITMQ_PORT}
+      - FRONTEND_MQ_PORT=${FRONTEND_MQ_PORT}
       - RABBITMQ_USER=${RABBITMQ_USER}
       - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
       - RABBITMQ_EXCHANGE=${RABBITMQ_EXCHANGE}
