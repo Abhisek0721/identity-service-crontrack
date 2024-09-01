@@ -4,8 +4,8 @@ from django.conf import settings
 
 def get_connection():
     try:
-        credentials = pika.PlainCredentials(settings.RABBITMQ_USER, settings.RABBITMQ_PASSWORD)
-        parameters = pika.ConnectionParameters(settings.RABBITMQ_HOST, settings.RABBITMQ_PORT, '/', credentials)
+        credentials = pika.PlainCredentials('creato_admin', '629648767bee46535b7f829ee2f8ecd0')
+        parameters = pika.ConnectionParameters('host.docker.internal', 5672, '/', credentials)
         connection = pika.BlockingConnection(parameters)
         return connection
     except Exception as e:
