@@ -5,7 +5,7 @@ from django.conf import settings
 def get_connection():
     try:
         credentials = pika.PlainCredentials('creato_admin', '629648767bee46535b7f829ee2f8ecd0')
-        parameters = pika.ConnectionParameters('rabbitmq-creato-dev', 5672, '/', credentials)
+        parameters = pika.ConnectionParameters('host.docker.internal', 5672, '/', credentials)
         connection = pika.BlockingConnection(parameters)
         return connection
     except Exception as e:
