@@ -1,23 +1,6 @@
 version: '3.9'
 
 services:
-  rabbitmq-creato-dev:
-    image: rabbitmq:3-management
-    ports:
-      - ${RABBITMQ_PORT}:${RABBITMQ_PORT}
-      - ${FRONTEND_MQ_PORT}:${FRONTEND_MQ_PORT}
-    environment:
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
-    networks:
-      - default
-    healthcheck:
-      test: ["CMD", "nc", "-z", "localhost", "${RABBITMQ_PORT}"]
-      interval: 10s
-      retries: 5
-      start_period: 30s
-      timeout: 5s
-
   identity-service-creato-dev:
     build: .
     command: sh -c "python manage.py migrate && python manage.py consume_messages & exec python manage.py runserver 0.0.0.0:${APP_PORT}"
@@ -27,7 +10,6 @@ services:
     depends_on:
       - identity-postgres-service-creato-dev
       - identity-redis-service-creato-dev
-      - rabbitmq-creato-dev
     environment:
       - DEBUG=1
       - SECRET_KEY=${SECRET_KEY}

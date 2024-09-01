@@ -4,8 +4,8 @@ from django.conf import settings
 
 def get_connection():
     try:
-        credentials = pika.PlainCredentials('creato_admin', '629648767bee46535b7f829ee2f8ecd0')
-        parameters = pika.ConnectionParameters('host.docker.internal', 5672, '/', credentials)
+        credentials = pika.PlainCredentials(settings.RABBITMQ_USER , settings.RABBITMQ_PASSWORD)
+        parameters = pika.ConnectionParameters(settings.RABBITMQ_HOST, settings.RABBITMQ_PORT, '/', credentials)
         connection = pika.BlockingConnection(parameters)
         return connection
     except Exception as e:
@@ -28,17 +28,17 @@ def publish_message(queue, exchange, routing_key, message):
 
 def publish_email_verification(message):
     publish_message(
-        queue='email_verification_queue',
-        exchange='email_exchange',
-        routing_key='email_verification_key',
+        queue=settings.RABBITMQ_EMAIL_VERIFICATION_QUEUE,
+        exchange=settings.RABBITMQ_EXCHANGE,
+        routing_key=settings.RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY,
         message=message
     )
 
 def publish_workspace_invite(message):
     publish_message(
-        queue='workspace_invite_queue',
-        exchange='email_exchange',
-        routing_key='workspace_invite_key',
+        queue=settings.RABBITMQ_WORKSPACE_INVITE_QUEUE,
+        exchange=settings.RABBITMQ_EXCHANGE,
+        routing_key=settings.RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY,
         message=message
     )
 
