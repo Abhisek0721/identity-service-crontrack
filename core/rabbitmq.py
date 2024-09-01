@@ -28,17 +28,17 @@ def publish_message(queue, exchange, routing_key, message):
 
 def publish_email_verification(message):
     publish_message(
-        queue=settings.RABBITMQ_EMAIL_VERIFICATION_QUEUE,
-        exchange=settings.RABBITMQ_EXCHANGE,
-        routing_key=settings.RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY,
+        queue='email_verification_queue',
+        exchange='email_exchange',
+        routing_key='email_verification_key',
         message=message
     )
 
 def publish_workspace_invite(message):
     publish_message(
-        queue=settings.RABBITMQ_WORKSPACE_INVITE_QUEUE,
-        exchange=settings.RABBITMQ_EXCHANGE,
-        routing_key=settings.RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY,
+        queue='workspace_invite_queue',
+        exchange='email_exchange',
+        routing_key='workspace_invite_key',
         message=message
     )
 
