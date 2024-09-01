@@ -11,7 +11,13 @@ services:
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
     networks:
       - default
-      
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "${RABBITMQ_PORT}"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 5s
+
   identity-service-creato-dev:
     build: .
     command: sh -c "python manage.py migrate && python manage.py consume_messages & exec python manage.py runserver 0.0.0.0:${APP_PORT}"
