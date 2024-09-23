@@ -5,6 +5,7 @@ from workspaces.views import WorkspaceView, InviteMembersView, VerifyInvitedMemb
 
 workspace_patterns = [
     path(r'', WorkspaceView.as_view(), name='create workspace'),
+    path(r'user/get-all-workspaces/', WorkspaceView.as_view(), name='get all workspaces'),
     path(r'', WorkspaceView.as_view(), name='update workspace'),
     path(r'<str:workspace_id>/', WorkspaceView.as_view(), name='get workspace'),
     path(r'invite-members', InviteMembersView.as_view(), name='invite members'),
