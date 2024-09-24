@@ -113,7 +113,7 @@ class InviteMembersView(generics.CreateAPIView):
             print(error)
             traceback.print_exc()
             raise error
-        
+
 
 class VerifyInvitedMembers(generics.UpdateAPIView):
     permission_classes = (AllowAny, )
