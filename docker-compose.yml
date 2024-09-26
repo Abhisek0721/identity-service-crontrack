@@ -55,9 +55,12 @@ services:
     restart: always
     ports:
       - ${REDIS_PORT}:${REDIS_PORT}
+    volumes:
+      - redis_data:/data   # <-- Add this to persist Redis data
 
 volumes:
   postgres_data:
+  redis_data:
 
 networks:
   default:
