@@ -54,7 +54,7 @@ class LoginView(APIView):
             validated_data = serializer.validated_data
             workspace_member = WorkspaceMember.objects.filter(
                 user=validated_data["user"].get('id')
-            ).all()
+            ).all().order_by("-created_at")
             user_workspace = None
             if workspace_member:
                 user_workspace = WorkspaceMemberSerializer(workspace_member, many=True).data
