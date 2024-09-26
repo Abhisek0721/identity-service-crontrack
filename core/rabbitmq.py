@@ -4,7 +4,7 @@ from django.conf import settings
 
 def get_connection():
     try:
-        credentials = pika.PlainCredentials(settings.RABBITMQ_USER, settings.RABBITMQ_PASSWORD)
+        credentials = pika.PlainCredentials(settings.RABBITMQ_USER , settings.RABBITMQ_PASSWORD)
         parameters = pika.ConnectionParameters(settings.RABBITMQ_HOST, settings.RABBITMQ_PORT, '/', credentials)
         connection = pika.BlockingConnection(parameters)
         return connection

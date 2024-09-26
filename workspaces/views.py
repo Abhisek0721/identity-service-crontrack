@@ -30,6 +30,13 @@ class WorkspaceView(generics.GenericAPIView):
         serializer = CreateWorkspaceSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             data = serializer.save()
+            workspace_member = WorkspaceMember.objects.filter(
+                user=user_id
+            ).all().order_by("-created_at")
+            user_workspace = None
+            if workspace_member:
+                user_workspace = WorkspaceMemberSerializer(workspace_member, many=True).data
+                data["user_workspace"] = user_workspace
             return api_response(data=data, message="Workspace created successfully", status=status.HTTP_201_CREATED)
 
     # Update Workspace
@@ -64,6 +71,20 @@ class WorkspaceView(generics.GenericAPIView):
         except Workspace.DoesNotExist:
             return api_response(data=None, message="Workspace not found", status=status.HTTP_404_NOT_FOUND)
 
+class GetAllWorkspaceView(generics.ListAPIView):
+    permission_classes = (IsAuthenticated,)
+
+    # Get all workspaces of a member
+    def get(self, request):
+        user_id = decode_jwt_token(request).get('user_id')
+        workspace_member = WorkspaceMember.objects.filter(
+            user=user_id
+        ).all().order_by('-created_at')
+        user_workspace = None
+        if workspace_member:
+            user_workspace = WorkspaceMemberSerializer(workspace_member, many=True).data
+        return api_response(data=user_workspace, message="Workspace data of a user", status=status.HTTP_200_OK)
+
 class InviteMembersView(generics.CreateAPIView):
     permission_classes = (IsAuthenticated,)
 
@@ -96,7 +117,7 @@ class InviteMembersView(generics.CreateAPIView):
             print(error)
             traceback.print_exc()
             raise error
-        
+
 
 class VerifyInvitedMembers(generics.UpdateAPIView):
     permission_classes = (AllowAny, )

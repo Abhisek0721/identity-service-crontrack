@@ -9,6 +9,7 @@ services:
     restart: always
     depends_on:
       - identity-postgres-service-creato-dev
+      - identity-redis-service-creato-dev
     environment:
       - DEBUG=1
       - SECRET_KEY=${SECRET_KEY}
@@ -26,6 +27,7 @@ services:
       - FRONTEND_BASE_URL=${FRONTEND_BASE_URL}
       - RABBITMQ_HOST=${RABBITMQ_HOST}
       - RABBITMQ_PORT=${RABBITMQ_PORT}
+      - FRONTEND_MQ_PORT=${FRONTEND_MQ_PORT}
       - RABBITMQ_USER=${RABBITMQ_USER}
       - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
       - RABBITMQ_EXCHANGE=${RABBITMQ_EXCHANGE}
@@ -33,6 +35,8 @@ services:
       - RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY=${RABBITMQ_EMAIL_VERIFICATION_ROUTING_KEY}
       - RABBITMQ_WORKSPACE_INVITE_QUEUE = ${RABBITMQ_WORKSPACE_INVITE_QUEUE}
       - RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY = ${RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY}
+    networks:
+      - default
 
   identity-postgres-service-creato-dev:
     image: postgres:14.1-alpine
@@ -54,3 +58,6 @@ services:
 
 volumes:
   postgres_data:
+
+networks:
+  default:
