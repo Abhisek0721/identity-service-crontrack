@@ -130,13 +130,13 @@ class VerifyInvitedMembers(generics.UpdateAPIView):
             serializer.is_valid(raise_exception=True)
             validated_data = serializer.validated_data
 
-            user_data = get_data_from_token(validated_data.get('verification_token'))
-            if not user_data:
-                return api_response(message="Invalid or Expired verification link.", status=status.HTTP_400_BAD_REQUEST)
-
             user = User.objects.filter(email=user_data.get('email')).first()
             if not user:
                 return api_response(message="User is not registered yet", status=status.HTTP_400_BAD_REQUEST)
+
+            user_data = get_data_from_token(validated_data.get('verification_token'))
+            if not user_data:
+                return api_response(message="Invalid or Expired verification link.", status=status.HTTP_400_BAD_REQUEST)
 
             workspace = get_object_or_404(Workspace, id=user_data.get("workspace_id"))
             workspace_member, is_created = WorkspaceMember.objects.update_or_create(
