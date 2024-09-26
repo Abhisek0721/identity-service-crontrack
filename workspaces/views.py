@@ -137,6 +137,7 @@ class VerifyInvitedMembers(generics.UpdateAPIView):
             user = User.objects.filter(email=user_data.get('email')).first()
             if not user:
                 return api_response(message="User is not registered yet", status=status.HTTP_400_BAD_REQUEST)
+            
             # Delete token if user is registered user
             get_data_from_token(validated_data.get('verification_token'), delete_token=True)
             workspace = get_object_or_404(Workspace, id=user_data.get("workspace_id"))
