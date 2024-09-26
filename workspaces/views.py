@@ -132,13 +132,15 @@ class VerifyInvitedMembers(generics.UpdateAPIView):
 
             user_data = get_data_from_token(validated_data.get('verification_token'), delete_token=False)
             user = User.objects.filter(email=user_data.get('email')).first()
+
+            if not user_data:
+                return api_response(message="Invalid or Expired verification link.", status=status.HTTP_400_BAD_REQUEST)
+        
             if not user:
                 return api_response(message="User is not registered yet", status=status.HTTP_400_BAD_REQUEST)
             
             # Delete token if user is registered user
             get_data_from_token(validated_data.get('verification_token'), delete_token=True)
-            if not user_data:
-                return api_response(message="Invalid or Expired verification link.", status=status.HTTP_400_BAD_REQUEST)
             
             workspace = get_object_or_404(Workspace, id=user_data.get("workspace_id"))
             workspace_member, is_created = WorkspaceMember.objects.update_or_create(
