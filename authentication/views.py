@@ -128,9 +128,11 @@ class GoogleLoginView(APIView):
         except (MissingBackend, AuthTokenError, AuthForbidden) as e:
             return api_response(message=f"Google authentication failed: {str(e)}", status=status.HTTP_400_BAD_REQUEST)
 
-        print(user, "user-data")
         if user and user.is_active:
             # Generate JWT tokens
+            if not user.verified:
+                user.verified = True
+                user.save()
             token_serializer = CustomTokenObtainPairSerializer()
             refresh_token = token_serializer.get_token(user)
 
