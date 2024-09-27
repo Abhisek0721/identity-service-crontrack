@@ -156,7 +156,7 @@ class GoogleOAuthCallbackView(APIView):
     permission_classes = (AllowAny, )
 
     def get(self, request, *args, **kwargs):
-        code = request.GET.get('code')
+        code = request.query_params.get('code')
         if not code:
             return api_response(message="Authorization code not provided", status=status.HTTP_400_BAD_REQUEST)
         return redirect(f'{settings.FRONTEND_BASE_URL}/login?googleOAuthCode={code}')
