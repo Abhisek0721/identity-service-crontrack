@@ -3,7 +3,7 @@ from rest_framework import generics, status
 from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 from django.contrib.auth import get_user_model
-from authentication.serializers import RegisterSerializer, LoginSerializer, ResendVerificationEmailDTO, VerifyUserDTO, ForgotPasswordDTO
+from authentication.serializers import RegisterSerializer, LoginSerializer, ResendVerificationEmailDTO, VerifyUserDTO, ForgotPasswordDTO, CustomTokenObtainPairSerializer
 from core.utils.api_response import api_response
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
@@ -14,6 +14,7 @@ from core.utils.verification_token import generate_and_save_token, get_data_from
 from django.contrib.auth.hashers import make_password
 from workspaces.models import WorkspaceMember
 from workspaces.serializers import WorkspaceMemberSerializer
+from users.serializers import UserSerializer
 
 User = get_user_model()
 
@@ -104,9 +105,23 @@ class VerifyUserView(APIView):
                 return api_response(data=response_data, message="User not found.", status=status.HTTP_404_NOT_FOUND)
             user.verified = True
             user.save()
-            response_data['verified'] = True
+            # Custom token serializer to include additional fields
+            token_serializer = CustomTokenObtainPairSerializer()
+            refresh_token = token_serializer.get_token(user)
+            workspace_member = WorkspaceMember.objects.filter(
+                user=user.id
+            ).all().order_by("-created_at")
+            user_workspace = None
+            if workspace_member:
+                user_workspace = WorkspaceMemberSerializer(workspace_member, many=True).data
+            response_data = {
+                'access_token': str(refresh_token.access_token),
+                'user': UserSerializer(user).data,
+                "user_workspace": user_workspace,
+                'verified': True
+            }
             return api_response(data=response_data, message="Verified successfully.", status=status.HTTP_200_OK)
-        
+
 
 class ForgotPasswordView(APIView):
     permission_classes = (AllowAny, )
