@@ -10,4 +10,5 @@ pika
 redis 
 django-redis
 psutil
+social-auth-app-django
 
