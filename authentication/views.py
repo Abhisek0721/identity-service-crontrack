@@ -99,11 +99,14 @@ class GoogleLoginView(APIView):
         operation_description="Login with google OAuth code."
     )
     def post(self, request, *args, **kwargs):
-        payload = GoogleOAuthCodeDTO(data=request.data).data
+        serializer = GoogleOAuthCodeDTO(data=request.data)
+        payload = { 'code': None }
+        if serializer.is_valid(raise_exception=True):
+            payload = serializer.data
         # Exchange authorization code for access token
         token_url = 'https://oauth2.googleapis.com/token'
         token_data = {
-            'code': payload.code,
+            'code': payload.get('code'),
             'client_id': settings.SOCIAL_AUTH_GOOGLE_OAUTH2_KEY,
             'client_secret': settings.SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET,
             'redirect_uri': f'{settings.BASE_URL}{settings.GOOGLE_LOGIN_REDIRECT_ENDPOINT}',
