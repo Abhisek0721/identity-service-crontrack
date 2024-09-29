@@ -11,6 +11,7 @@ from core.utils.verification_token import generate_and_save_token, get_data_from
 import json
 import traceback
 from users.models import User
+from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 
 
@@ -71,7 +72,7 @@ class WorkspaceView(generics.GenericAPIView):
         except Workspace.DoesNotExist:
             return api_response(data=None, message="Workspace not found", status=status.HTTP_404_NOT_FOUND)
 
-class GetAllWorkspaceView(generics.ListAPIView):
+class GetAllWorkspaceView(APIView):
     permission_classes = (IsAuthenticated,)
 
     # Get all workspaces of a member
