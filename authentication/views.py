@@ -88,7 +88,7 @@ class GoogleLoginView(APIView):
         }
         google_auth_url = f"https://accounts.google.com/o/oauth2/auth?{urlencode(params)}"
         # Redirect to Google OAuth2 login
-        return redirect(google_auth_url)
+        return api_response(data={"google_login_url": google_auth_url}, message="Redirecting to Google login.", status=status.HTTP_200_OK)
     
     # Get access_token from Google OAuth Code
     @swagger_auto_schema(
