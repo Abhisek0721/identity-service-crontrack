@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'social_django',
     'drf_yasg',
     'users',
     'authentication',
@@ -124,7 +125,8 @@ SIMPLE_JWT = {
     'SIGNING_KEY': os.getenv('JWT_SECRET_KEY')
 }
 
-# FRONTEND setting
+# BASE_URL setting
+BASE_URL = os.getenv('BASE_URL')
 FRONTEND_BASE_URL=os.getenv('FRONTEND_BASE_URL')
 
 # RabbitMQ settings
@@ -151,6 +153,16 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+
+# google login config
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',  # Keep the default authentication backend
+)
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv('GOOGLE_CLIENT_ID')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = os.getenv('GOOGLE_CLIENT_SECRET')
+GOOGLE_LOGIN_REDIRECT_ENDPOINT = os.getenv('GOOGLE_LOGIN_REDIRECT_ENDPOINT')
 
 
 APPEND_SLASH = True

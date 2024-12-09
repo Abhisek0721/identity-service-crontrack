@@ -11,6 +11,7 @@ from core.utils.verification_token import generate_and_save_token, get_data_from
 import json
 import traceback
 from users.models import User
+from rest_framework.views import APIView
 from django.shortcuts import get_object_or_404
 
 
@@ -71,7 +72,7 @@ class WorkspaceView(generics.GenericAPIView):
         except Workspace.DoesNotExist:
             return api_response(data=None, message="Workspace not found", status=status.HTTP_404_NOT_FOUND)
 
-class GetAllWorkspaceView(generics.ListAPIView):
+class GetAllWorkspaceView(APIView):
     permission_classes = (IsAuthenticated,)
 
     # Get all workspaces of a member
@@ -131,14 +132,15 @@ class VerifyInvitedMembers(generics.UpdateAPIView):
             validated_data = serializer.validated_data
 
             user_data = get_data_from_token(validated_data.get('verification_token'), delete_token=False)
+            if not user_data:
+                return api_response(message="Invalid or Expired verification link.", status=status.HTTP_400_BAD_REQUEST)
+            
             user = User.objects.filter(email=user_data.get('email')).first()
             if not user:
                 return api_response(message="User is not registered yet", status=status.HTTP_400_BAD_REQUEST)
             
             # Delete token if user is registered user
             get_data_from_token(validated_data.get('verification_token'), delete_token=True)
-            if not user_data:
-                return api_response(message="Invalid or Expired verification link.", status=status.HTTP_400_BAD_REQUEST)
             
             workspace = get_object_or_404(Workspace, id=user_data.get("workspace_id"))
             workspace_member, is_created = WorkspaceMember.objects.update_or_create(
