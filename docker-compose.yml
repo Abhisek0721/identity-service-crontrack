@@ -36,7 +36,7 @@ services:
       - RABBITMQ_WORKSPACE_INVITE_QUEUE = ${RABBITMQ_WORKSPACE_INVITE_QUEUE}
       - RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY = ${RABBITMQ_WORKSPACE_INVITE_ROUTING_KEY}
     networks:
-      - default
+      - shared_net
 
   identity-postgres-service-creato-dev:
     image: postgres:14.1-alpine
@@ -63,4 +63,5 @@ volumes:
   redis_data:
 
 networks:
-  default:
+  shared_net:
+    external: true
