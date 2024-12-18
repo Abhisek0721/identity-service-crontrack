@@ -86,6 +86,20 @@ class GetAllWorkspaceView(APIView):
             user_workspace = WorkspaceMemberSerializer(workspace_member, many=True).data
         return api_response(data=user_workspace, message="Workspace data of a user", status=status.HTTP_200_OK)
 
+class ValidateWorkspaceView(APIView):
+    permission_classes = (AllowAny, )
+    
+    def get(self, request, *args, **kwargs):
+        workspace_id = kwargs.get('workspace_id')
+        if not workspace_id:
+            return api_response(data=None, message="workspace_id is required", status=status.HTTP_400_BAD_REQUEST)
+        check_workspace = Workspace.objects.check(id=workspace_id)
+        return api_response(
+            data={"check_workspace":check_workspace}, 
+            message="Workspace data of a user", 
+            status=status.HTTP_200_OK
+        )
+
 class InviteMembersView(generics.CreateAPIView):
     permission_classes = (IsAuthenticated,)
 
