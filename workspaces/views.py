@@ -88,12 +88,12 @@ class GetAllWorkspaceView(APIView):
 
 class ValidateWorkspaceView(APIView):
     permission_classes = (AllowAny, )
-    
+
     def get(self, request, *args, **kwargs):
         workspace_id = kwargs.get('workspace_id')
         if not workspace_id:
             return api_response(data=None, message="workspace_id is required", status=status.HTTP_400_BAD_REQUEST)
-        check_workspace = Workspace.objects.check(id=workspace_id)
+        check_workspace = Workspace.objects.filter(id=workspace_id).exists()
         return api_response(
             data={"check_workspace":check_workspace}, 
             message="Workspace data of a user", 
